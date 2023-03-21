@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainActivity"
+    android:visibility="gone"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -13,22 +15,50 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/id2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:onClick="textView"
             android:text="Hello World!"
-            android:textColor="@color/black"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:paddingHorizontal="25dp"
+            android:layout_marginTop="25dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/phone"
+                android:autofillHints="Phone Number"
+                android:hint="New Emergency No"
+                android:inputType="phone"
+                android:textSize="17sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.skyfishjy.library.RippleBackground
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/rippleBg"
+            app:rb_color="@color/teal_700"
+            app:rb_radius="50dp"
+            app:rb_rippleAmount="4"
+            app:rb_duration="3000"
+            app:rb_scale="6">
+
+            <ToggleButton
+                android:id="@+id/tbtn"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:checked="false" />
+
+        </com.skyfishjy.library.RippleBackground>
 
     </LinearLayout>
 </RelativeLayout>
